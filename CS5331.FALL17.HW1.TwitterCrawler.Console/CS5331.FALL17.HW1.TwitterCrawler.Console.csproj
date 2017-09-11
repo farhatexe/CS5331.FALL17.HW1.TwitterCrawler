@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Twitter.Crawler\Twitter.Crawler.csproj">
+      <Project>{dee63622-4d94-4176-9e75-eb6cf891f408}</Project>
+      <Name>Twitter.Crawler</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
