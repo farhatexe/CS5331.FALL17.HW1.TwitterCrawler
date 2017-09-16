@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS5331.FALL17.HW1.TwitterCr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler", "Twitter.Crawler\Twitter.Crawler.csproj", "{DEE63622-4D94-4176-9E75-EB6CF891F408}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Test", "Twitter.Crawler.Test\Twitter.Crawler.Test.csproj", "{7072CAC1-7196-4C27-861B-56F16BCECF9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DEE63622-4D94-4176-9E75-EB6CF891F408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEE63622-4D94-4176-9E75-EB6CF891F408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEE63622-4D94-4176-9E75-EB6CF891F408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -52,11 +52,8 @@ namespace Twitter.Crawler.Access
         public async Task DoSearchAsync()
 
         {
-            TwitterContext twitterCtx = _twitterContext;
-            string searchTerm = "HARVEY OR HURRICANEHARVEY OR HOUSTONSTRONG OR HOUSTON";
-
-            //string searchTerm = "#ömer -RT -instagram news source%3Afoursquare";
-
+            var twitterCtx = _twitterContext;
+            var searchTerm = "HARVEY OR HURRICANEHARVEY OR HOUSTONSTRONG OR HOUSTON";
 
 
             Search searchResponse =

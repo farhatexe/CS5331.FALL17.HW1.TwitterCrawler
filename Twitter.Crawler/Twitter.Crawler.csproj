@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Access\AccessCredentials.cs" />
     <Compile Include="Access\ConnectToTwitter.cs" />
     <Compile Include="Access\LinqtoTwitter.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Helpers\Serializers.cs" />
+    <Compile Include="Interfaces\IAccessCredentials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
