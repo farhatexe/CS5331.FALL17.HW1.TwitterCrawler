@@ -259,3 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/CS5331.FALL17.HW1.TwitterCrawler.Console/AccessCredentials.xml
