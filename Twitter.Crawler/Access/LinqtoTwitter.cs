@@ -79,7 +79,6 @@ namespace Twitter.Crawler.Access
 
 
             if (searchResponse?.Statuses != null)
-
                 searchResponse.Statuses.ForEach(tweet =>
 
                     Console.WriteLine(
@@ -95,6 +94,8 @@ namespace Twitter.Crawler.Access
             else
 
                 Console.WriteLine("No entries found.");
+
+            
 
         }
 
