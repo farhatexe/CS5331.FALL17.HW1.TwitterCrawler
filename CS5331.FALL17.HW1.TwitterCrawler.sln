@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler", "Twitter.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Test", "Twitter.Crawler.Test\Twitter.Crawler.Test.csproj", "{7072CAC1-7196-4C27-861B-56F16BCECF9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Model", "Twitter.Crawler.Model\Twitter.Crawler.Model.csproj", "{CF7EBDDE-5C7B-47A7-9171-34D8B06B948B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Data", "Twitter.Crawler.Data\Twitter.Crawler.Data.csproj", "{46FE15DB-D19A-493B-9121-C781E38ADD29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7072CAC1-7196-4C27-861B-56F16BCECF9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7EBDDE-5C7B-47A7-9171-34D8B06B948B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7EBDDE-5C7B-47A7-9171-34D8B06B948B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7EBDDE-5C7B-47A7-9171-34D8B06B948B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7EBDDE-5C7B-47A7-9171-34D8B06B948B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
