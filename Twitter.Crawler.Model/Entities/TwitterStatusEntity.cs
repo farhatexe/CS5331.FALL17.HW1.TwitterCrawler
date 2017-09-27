@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Twitter.Crawler.Model.Entities
 {
@@ -61,6 +62,7 @@ namespace Twitter.Crawler.Model.Entities
 
         public string InReplyToScreenName { get; set; }
 
+        [Required]
         public TwitterUserEntity User { get; set; }
 
         //public List<long> Users { get; set; }

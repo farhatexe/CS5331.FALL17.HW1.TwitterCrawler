@@ -5,6 +5,7 @@ namespace Twitter.Crawler.Model.Entities
 {
     public class TwitterUserEntity
     {
+        public int Id { get; set; }
         public string Type { get; set; }
 
         public long UserId { get; set; }
