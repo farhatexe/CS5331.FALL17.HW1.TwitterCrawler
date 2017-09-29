@@ -10,10 +10,10 @@ namespace Twitter.Crawler.Repository
 {
     public class TwitterStatusRepository
     {
-        private TwitterCrawlerContext _twitterDbContext;
-        public TwitterStatusRepository(TwitterCrawlerContext twitterDbContext)
+        private readonly TwitterCrawlerContext _twitterDbContext;
+        public TwitterStatusRepository(TwitterCrawlerContext twitterDbContext = null)
         {
-            _twitterDbContext = twitterDbContext;
+            _twitterDbContext = twitterDbContext ?? new TwitterCrawlerContext();
         }
 
         public void CreateOrUpdateStatus(Status statusToAdd)
