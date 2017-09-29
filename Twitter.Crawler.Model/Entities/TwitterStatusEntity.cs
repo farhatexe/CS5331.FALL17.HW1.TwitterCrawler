@@ -24,6 +24,7 @@ namespace Twitter.Crawler.Model.Entities
             CreatedAt = _linqToTwitterStatus.CreatedAt;
             Truncated = _linqToTwitterStatus.Truncated;
             Coordinates = new TwitterCoordinatesEntity(linqToTwitterStatus.Coordinates);
+            User = new TwitterUserEntity(linqToTwitterStatus.User);
 
         }
         public int Id { get; set; }

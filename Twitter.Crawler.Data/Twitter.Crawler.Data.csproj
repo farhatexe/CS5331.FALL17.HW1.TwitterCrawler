@@ -67,6 +67,14 @@
     <Compile Include="Migrations\201709270239306_Initial.Designer.cs">
       <DependentUpon>201709270239306_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709292112231_initialTranlated.cs" />
+    <Compile Include="Migrations\201709292112231_initialTranlated.Designer.cs">
+      <DependentUpon>201709292112231_initialTranlated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709292130554_dateTimeModification.cs" />
+    <Compile Include="Migrations\201709292130554_dateTimeModification.Designer.cs">
+      <DependentUpon>201709292130554_dateTimeModification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TwitterCrawlerContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,6 +113,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709270239306_Initial.resx">
       <DependentUpon>201709270239306_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709292112231_initialTranlated.resx">
+      <DependentUpon>201709292112231_initialTranlated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709292130554_dateTimeModification.resx">
+      <DependentUpon>201709292130554_dateTimeModification.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

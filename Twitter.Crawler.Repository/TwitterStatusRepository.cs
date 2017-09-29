@@ -22,6 +22,7 @@ namespace Twitter.Crawler.Repository
             {
                 var translatedStatus = new TwitterStatusEntity(statusToAdd);
                 _twitterDbContext.TwitterStatusEntities.Add(translatedStatus);
+                _twitterDbContext.SaveChanges();
             }
         }
 
@@ -43,6 +44,7 @@ namespace Twitter.Crawler.Repository
             {
                
                 _twitterDbContext.TwitterStatusEntities.AddRange(statusesTranslatedToAdd);
+                _twitterDbContext.SaveChanges();
             }
         }
     }

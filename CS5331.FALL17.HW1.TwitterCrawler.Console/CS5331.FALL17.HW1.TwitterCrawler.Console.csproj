@@ -75,6 +75,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Twitter.Crawler.Data\Twitter.Crawler.Data.csproj">
+      <Project>{46FE15DB-D19A-493B-9121-C781E38ADD29}</Project>
+      <Name>Twitter.Crawler.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Twitter.Crawler.Repository\Twitter.Crawler.Repository.csproj">
+      <Project>{4d7af950-bb64-4180-b247-840153554e37}</Project>
+      <Name>Twitter.Crawler.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Twitter.Crawler\Twitter.Crawler.csproj">
       <Project>{dee63622-4d94-4176-9e75-eb6cf891f408}</Project>
       <Name>Twitter.Crawler</Name>

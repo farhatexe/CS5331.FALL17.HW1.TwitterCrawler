@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Twitter.Crawler.Access;
 using Twitter.Crawler.Helpers;
+using Twitter.Crawler.Repository;
 
 namespace CS5331.FALL17.HW1.TwitterCrawler.ConsoleApp
 {
@@ -20,9 +21,9 @@ namespace CS5331.FALL17.HW1.TwitterCrawler.ConsoleApp
             //results.SaveToFile("Results.xml");
             //var results = test.DoSearchReturnTweetsAsync();
             var results = test.DoSearchReturnTweetsToMaxAsync();
-            results.SaveToFile("ResultTweets.xml");
-            //Console.WriteLine("Results: {0}", results.);
-            //test.GettingRateLimitsAsync().Wait();
+            //results.SaveToFile("ResultTweets.xml");
+            var repo = new TwitterStatusRepository();
+            repo.CreateOrUpdateStatus(results.Result);
             test.GetLimits();
         }
 

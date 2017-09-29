@@ -220,7 +220,7 @@ namespace Twitter.Crawler.Access
 
         {
             var twitterCtx = _twitterContext;
-            var searchTerm = "FOOTBALL OR @NFL -filter:retweets -filter:media filter:safe";
+            var searchTerm = "@NFL -filter:retweets -filter:media filter:safe";
             var returnValue = new List<Status>();
             const int maxTotalResults = 1000;
 
