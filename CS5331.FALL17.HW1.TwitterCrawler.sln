@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS5331.FALL17.HW1.TwitterCrawler.Console", "CS5331.FALL17.HW1.TwitterCrawler.Console\CS5331.FALL17.HW1.TwitterCrawler.Console.csproj", "{3458897D-7FDB-466A-A74B-A8C216CCC9AB}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Model", "Twitter.Crawler.Model\Twitter.Crawler.Model.csproj", "{CF7EBDDE-5C7B-47A7-9171-34D8B06B948B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Data", "Twitter.Crawler.Data\Twitter.Crawler.Data.csproj", "{46FE15DB-D19A-493B-9121-C781E38ADD29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitter.Crawler.Repository", "Twitter.Crawler.Repository\Twitter.Crawler.Repository.csproj", "{4D7AF950-BB64-4180-B247-840153554E37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46FE15DB-D19A-493B-9121-C781E38ADD29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7AF950-BB64-4180-B247-840153554E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7AF950-BB64-4180-B247-840153554E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7AF950-BB64-4180-B247-840153554E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7AF950-BB64-4180-B247-840153554E37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

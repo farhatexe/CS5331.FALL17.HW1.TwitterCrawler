@@ -1,9 +1,26 @@
 ﻿using System.Collections.Generic;
-
+using LinqToTwitter;
 namespace Twitter.Crawler.Model.Entities
 {
     public class TwitterPlaceEntity
     {
+        public TwitterPlaceEntity(Place linqToTwitterPlace)
+        {
+            if(linqToTwitterPlace==null) return;
+            
+            Name = linqToTwitterPlace.Name;
+            FullName = linqToTwitterPlace.FullName;
+            Url = linqToTwitterPlace.Url;
+            PlaceType = linqToTwitterPlace.PlaceType;
+            Country = linqToTwitterPlace.Country;
+            CountryCode = linqToTwitterPlace.CountryCode;
+            ContainedWithin = new TwitterPlaceEntity(linqToTwitterPlace.ContainedWithin);
+            Geometry = new List<TwitterCoordinatesEntity>();
+            foreach (var coordinate in linqToTwitterPlace.Geometry.Coordinates)
+            {
+                Geometry.Add(new TwitterCoordinatesEntity(coordinate));
+            }
+        }
         public int Id { get; set; }
 
         public string Name { get; set; }

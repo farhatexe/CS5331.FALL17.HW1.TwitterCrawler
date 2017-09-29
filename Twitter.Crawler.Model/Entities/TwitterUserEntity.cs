@@ -1,14 +1,25 @@
 ﻿using System;
-using System.Xml.Serialization;
+using LinqToTwitter;
 
 namespace Twitter.Crawler.Model.Entities
 {
     public class TwitterUserEntity
     {
+        public TwitterUserEntity(User linqToTwitterUser)
+        {
+            Type = linqToTwitterUser.Type.ToString();
+            UserId = linqToTwitterUser.UserID.ToString();
+            ScreenName = linqToTwitterUser.ScreenName;
+            TimeZone = linqToTwitterUser.TimeZone;
+            UtcOffset = linqToTwitterUser.UtcOffset;
+            Email = linqToTwitterUser.Email;
+        }
+
         public int Id { get; set; }
+
         public string Type { get; set; }
 
-        public long UserId { get; set; }
+        public string UserId { get; set; }
 
         public string UserIdList { get; set; }
 

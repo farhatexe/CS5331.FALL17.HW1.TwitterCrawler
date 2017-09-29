@@ -1,18 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using LinqToTwitter;
 
 namespace Twitter.Crawler.Model.Entities
 {
     public class TwitterStatusEntity
     {
+        private Status _linqToTwitterStatus;
+        public TwitterStatusEntity()
+        {
+
+        }
+
+        public TwitterStatusEntity(Status linqToTwitterStatus)
+        {
+            _linqToTwitterStatus = linqToTwitterStatus;
+            TweetId = _linqToTwitterStatus.ID.ToString();
+            ScreenName = _linqToTwitterStatus.ScreenName;
+            SinceID = _linqToTwitterStatus.SinceID.ToString();
+            MaxID = _linqToTwitterStatus.MaxID.ToString();
+            Text = _linqToTwitterStatus.Text;
+            CreatedAt = _linqToTwitterStatus.CreatedAt;
+            Truncated = _linqToTwitterStatus.Truncated;
+            Coordinates = new TwitterCoordinatesEntity(linqToTwitterStatus.Coordinates);
+
+        }
         public int Id { get; set; }
+
+        public string TweetId { get; set; }
         
         public string ScreenName { get; set; }
 
-        public int SinceID { get; set; }
+        public string SinceID { get; set; }
 
-        public int MaxID { get; set; }
+        public string MaxID { get; set; }
 
         public int Count { get; set; }
 
