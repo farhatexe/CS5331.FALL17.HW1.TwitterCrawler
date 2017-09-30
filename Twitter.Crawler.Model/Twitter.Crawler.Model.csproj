@@ -65,10 +65,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\TwitterCoordinatesEntity.cs" />
-    <Compile Include="Entities\TwitterPlaceEntity.cs" />
+    <None Include="Entities\TwitterCoordinatesEntity.cs" />
+    <None Include="Entities\TwitterPlaceEntity.cs" />
+    <Compile Include="Entities\TwitterCrawlerClassEntity.cs" />
     <Compile Include="Entities\TwitterStatusEntity.cs" />
-    <Compile Include="Entities\TwitterUserEntity.cs" />
+    <None Include="Entities\TwitterUserEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

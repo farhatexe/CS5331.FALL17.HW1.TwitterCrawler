@@ -63,17 +63,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201709270239306_Initial.cs" />
-    <Compile Include="Migrations\201709270239306_Initial.Designer.cs">
-      <DependentUpon>201709270239306_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201709292339101_initial.cs" />
+    <Compile Include="Migrations\201709292339101_initial.Designer.cs">
+      <DependentUpon>201709292339101_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709292112231_initialTranlated.cs" />
-    <Compile Include="Migrations\201709292112231_initialTranlated.Designer.cs">
-      <DependentUpon>201709292112231_initialTranlated.cs</DependentUpon>
+    <Compile Include="Migrations\201709300030211_initial2.cs" />
+    <Compile Include="Migrations\201709300030211_initial2.Designer.cs">
+      <DependentUpon>201709300030211_initial2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709292130554_dateTimeModification.cs" />
-    <Compile Include="Migrations\201709292130554_dateTimeModification.Designer.cs">
-      <DependentUpon>201709292130554_dateTimeModification.cs</DependentUpon>
+    <Compile Include="Migrations\201709300043188_initial3.cs" />
+    <Compile Include="Migrations\201709300043188_initial3.Designer.cs">
+      <DependentUpon>201709300043188_initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709300312414_initial4.cs" />
+    <Compile Include="Migrations\201709300312414_initial4.Designer.cs">
+      <DependentUpon>201709300312414_initial4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TwitterCrawlerContext.cs" />
@@ -111,14 +115,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709270239306_Initial.resx">
-      <DependentUpon>201709270239306_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709292339101_initial.resx">
+      <DependentUpon>201709292339101_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709292112231_initialTranlated.resx">
-      <DependentUpon>201709292112231_initialTranlated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709300030211_initial2.resx">
+      <DependentUpon>201709300030211_initial2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709292130554_dateTimeModification.resx">
-      <DependentUpon>201709292130554_dateTimeModification.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709300043188_initial3.resx">
+      <DependentUpon>201709300043188_initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709300312414_initial4.resx">
+      <DependentUpon>201709300312414_initial4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

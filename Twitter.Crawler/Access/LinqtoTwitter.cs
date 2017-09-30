@@ -216,13 +216,13 @@ namespace Twitter.Crawler.Access
             return returnValue;
 
         }
-        public async Task<List<Status>> DoSearchReturnTweetsToMaxAsync()
+        public async Task<List<Status>> DoSearchReturnTweetsToMaxAsync(ulong maxId, ulong sinceUlong = 1)
 
         {
             var twitterCtx = _twitterContext;
-            var searchTerm = "@NFL -filter:retweets -filter:media filter:safe";
+            var searchTerm = "@NFL #nfl -filter:retweets -filter:media";
             var returnValue = new List<Status>();
-            const int maxTotalResults = 1000;
+            const int maxTotalResults = 1000000;
 
 
 
@@ -232,15 +232,15 @@ namespace Twitter.Crawler.Access
 
             // oldest id you already have for this search term
 
-            ulong sinceID = 1;
+            ulong sinceID = sinceUlong;
 
 
 
             // used after the first query to track current session
 
-            ulong maxID;
+            ulong maxID = maxId;
 
-
+            ulong previousMaxID = maxId;
 
             var combinedSearchResults = new List<Status>();
 
@@ -257,6 +257,7 @@ namespace Twitter.Crawler.Access
                           search.Count == 100 &&
                           search.IncludeEntities == true &&
                           search.SearchLanguage == "en" &&
+                          search.MaxID == maxID &&
                           search.SinceID == sinceID
 
                  select search.Statuses)
@@ -271,8 +272,8 @@ namespace Twitter.Crawler.Access
 
                 combinedSearchResults.AddRange(searchResponse);
 
-                ulong previousMaxID = ulong.MaxValue;
-
+                //ulong previousMaxID = ulong.MaxValue;
+                bool outOfQueries = false;
                 do
 
                 {
@@ -308,12 +309,17 @@ namespace Twitter.Crawler.Access
                         .SingleOrDefaultAsync();
                     var numberOfCallsRemaining =
                         Convert.ToUInt16(_twitterContext.ResponseHeaders["x-rate-limit-remaining"]);
+                    var numberOfSecondsUntilReset =
+                        Convert.ToInt64(_twitterContext.ResponseHeaders["x-rate-limit-reset"]);
+                   // var timeOfReset = new DateTime(numberOfSecondsUntilReset);
+                    var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+                    var timeOfReset = epoch.AddSeconds(numberOfSecondsUntilReset);
                     Console.WriteLine("Rate Limit Remaining: {0}", numberOfCallsRemaining);
-
+                    Console.WriteLine("Rate Limit Time Until Reset: {0}", timeOfReset);
                     combinedSearchResults.AddRange(searchResponse);
+                    outOfQueries = numberOfCallsRemaining == 0;
 
-
-                } while (searchResponse.Any() && combinedSearchResults.Count < maxTotalResults);
+                } while (searchResponse.Any() && combinedSearchResults.Count < maxTotalResults && !outOfQueries);
 
                 returnValue = combinedSearchResults;
 
@@ -342,6 +348,8 @@ namespace Twitter.Crawler.Access
             return returnValue;
 
         }
+
+        
 
     }
 }

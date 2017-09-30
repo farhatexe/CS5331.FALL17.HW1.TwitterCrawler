@@ -20,11 +20,18 @@ namespace CS5331.FALL17.HW1.TwitterCrawler.ConsoleApp
             //string results = test.DoSearchReturnResultsAsync().Result;//.Wait();
             //results.SaveToFile("Results.xml");
             //var results = test.DoSearchReturnTweetsAsync();
-            var results = test.DoSearchReturnTweetsToMaxAsync();
-            //results.SaveToFile("ResultTweets.xml");
             var repo = new TwitterStatusRepository();
-            repo.CreateOrUpdateStatus(results.Result);
-            test.GetLimits();
+            ///var maxValue = (ulong)repo.GetMaxStatusId();
+            ///var results = test.DoSearchReturnTweetsToMaxAsync(ulong.MaxValue, maxValue).Result;//.Wait();
+            //results.SaveToFile("ResultTweets.xml");
+            ///if (results.Count>0) 
+            ///    repo.CreateOrUpdateStatus(results);
+            Console.WriteLine("Max Status: {0}", repo.GetMaxStatusId());
+            Console.WriteLine("Min Status: {0}", repo.GetMinStatusId());
+            Console.WriteLine(repo.RemoveDuplicates());
+            repo.GetAllTags();
+            Console.ReadLine();
+            //test.GetLimits();
         }
 
 
