@@ -2,6 +2,10 @@
 {
     public class TwitterCrawlerClassEntity
     {
+        public TwitterCrawlerClassEntity()
+        {
+            
+        }
         public TwitterCrawlerClassEntity(string text)
         {
             ClassText = text;
@@ -13,5 +17,6 @@
         public int InstanceCount { get; set; }
         public bool IsHashTag { get; set; }
         public bool IsAddress { get; set; }
+        public bool IsUnique { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Twitter.Crawler.Model.Entities;
 
 namespace Twitter.Crawler.Repository
 {
-    public class TwitterStatusRepository:IDisposable
+    public class TwitterStatusRepository : IDisposable
     {
         private readonly TwitterCrawlerContext _twitterDbContext;
         public TwitterStatusRepository(TwitterCrawlerContext twitterDbContext = null)
@@ -22,9 +22,9 @@ namespace Twitter.Crawler.Repository
         {
             //using (_twitterDbContext)
             //{
-                var translatedStatus = new TwitterStatusEntity(statusToAdd);
-                _twitterDbContext.TwitterStatusEntities.Add(translatedStatus);
-                _twitterDbContext.SaveChanges();
+            var translatedStatus = new TwitterStatusEntity(statusToAdd);
+            _twitterDbContext.TwitterStatusEntities.Add(translatedStatus);
+            _twitterDbContext.SaveChanges();
             //}
         }
 
@@ -44,9 +44,9 @@ namespace Twitter.Crawler.Repository
             }
             //using (_twitterDbContext)
             ///{
-               
-                _twitterDbContext.TwitterStatusEntities.AddRange(statusesTranslatedToAdd);
-                _twitterDbContext.SaveChanges();
+
+            _twitterDbContext.TwitterStatusEntities.AddRange(statusesTranslatedToAdd);
+            _twitterDbContext.SaveChanges();
             //}
         }
 
@@ -54,40 +54,41 @@ namespace Twitter.Crawler.Repository
         {
             //using (_twitterDbContext)
             //{
-                var test = _twitterDbContext.TwitterStatusEntities.Select(x => (x.StatusId)).ToList();
-                return test.Max();
+            var test = _twitterDbContext.TwitterStatusEntities.Select(x => (x.StatusId)).ToList();
+            return test.Max();
             //}
-            
+
         }
 
         public decimal GetMinStatusId()
         {
             /////using (_twitterDbContext)
             ////{
-                var test = _twitterDbContext.TwitterStatusEntities.Select(x => (x.StatusId)).ToList();
-                return test.Min();
+            var test = _twitterDbContext.TwitterStatusEntities.Select(x => (x.StatusId)).ToList();
+            return test.Min();
             //}
-            
+
         }
 
         public int RemoveDuplicates()
         {
             var duplicates = 1;
             var q = from r in _twitterDbContext.TwitterStatusEntities
-                group r by new
-                {
-                    FieldA = r.StatusId}
+                    group r by new
+                    {
+                        FieldA = r.StatusId
+                    }
                     into g
                     where g.Count() > 1
                     select g;
-                    foreach (var g in q)
-                    {
-                    var dupes = g.Skip(1).ToList();
-                    foreach (var record in dupes)
-                    {
+            foreach (var g in q)
+            {
+                var dupes = g.Skip(1).ToList();
+                foreach (var record in dupes)
+                {
                     _twitterDbContext.TwitterStatusEntities.Remove(record);//.DeleteObject(record);
-                        duplicates++;
-                    }
+                    duplicates++;
+                }
             }
             _twitterDbContext.SaveChanges();
             return duplicates;
@@ -107,9 +108,13 @@ namespace Twitter.Crawler.Repository
                 //_twitterDbContext.TwitterStatusEntities.AddRange(textSplit)
                 foreach (var textValue in textSplit)
                 {
-                    classList.Add(new TwitterCrawlerClassEntity(textValue));
+                    var crawlerClass = new TwitterCrawlerClassEntity(textValue);
+                    //if(classList.Contains(crawlerClass))
+                    //    continue;
+                    classList.Add(crawlerClass);
                 }
             }
+            _twitterDbContext.TwitterCrawlerClasses.AddRange(classList);
             _twitterDbContext.SaveChanges();
             Console.WriteLine(classList.Count());
         }
@@ -117,5 +122,66 @@ namespace Twitter.Crawler.Repository
         {
             _twitterDbContext?.Dispose();
         }
+
+        public int RemoveDuplicateClasses()
+        {
+            //var results = _twitterDbContext.TwitterCrawlerClasses.GroupBy(x => x.ClassText).Select(y=>y.FirstOrDefault()).ToList();
+            var results = _twitterDbContext.TwitterCrawlerClasses.ToList();
+            var removalList = new List<TwitterCrawlerClassEntity>();
+            Console.WriteLine(results.Count());
+            var testClassAlreadyFound = new HashSet<string>();
+            foreach (var VARIABLE in results)
+            {
+                if (testClassAlreadyFound.Contains(VARIABLE.ClassText))
+                {
+                    continue;
+                }
+                VARIABLE.IsUnique = true;
+                testClassAlreadyFound.Add(VARIABLE.ClassText);
+                //VARIABLE.IsUnique = true;
+                //break;
+                //if (!results.Contains(VARIABLE))
+                //{
+                //    removalList.Add(VARIABLE);
+                //}
+            }
+            _twitterDbContext.SaveChanges();
+            //Console.WriteLine(updates);
+            //var query = collection.GroupBy(x => x.title).Select(y => y.FirstOrDefault());
+            //var duplicates = 1;
+            //var q = from r in _twitterDbContext.TwitterCrawlerClasses
+            //    group r by new
+            //    {
+            //        FieldA = r.ClassText
+            //    }
+            //    into g
+            //    where g.Count() > 10000
+            //    select g;
+            //foreach (var g in q)
+            //{
+            //    var dupes = g.Skip(1).ToList();
+            //    foreach (var record in dupes)
+            //    {
+            //        Console.WriteLine("Duplicate {0} found", record.ClassText);
+            //        _twitterDbContext.TwitterCrawlerClasses.Remove(record);//.DeleteObject(record);
+            //        duplicates++;
+            //    }
+            //}
+            //_twitterDbContext.SaveChanges();
+            return 1;
+        }
+
+        public void UpdateCount()
+        {
+            var results = _twitterDbContext.TwitterCrawlerClasses.Where(x=>x.IsUnique).ToList();
+            foreach (var VARIABLE in results)
+            {
+                var numResults = _twitterDbContext.TwitterCrawlerClasses.Where(x => x.ClassText == VARIABLE.ClassText)
+                    .ToList().Count();
+                VARIABLE.InstanceCount = numResults;
+            }
+            _twitterDbContext.SaveChanges();
+        }
+
     }
 }

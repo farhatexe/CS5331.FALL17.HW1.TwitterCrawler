@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201709300312414_initial4.Designer.cs">
       <DependentUpon>201709300312414_initial4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709300405042_initial5.cs" />
+    <Compile Include="Migrations\201709300405042_initial5.Designer.cs">
+      <DependentUpon>201709300405042_initial5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TwitterCrawlerContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,15 +96,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TwitterData.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TwitterData_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>TwitterData.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -126,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709300312414_initial4.resx">
       <DependentUpon>201709300312414_initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709300405042_initial5.resx">
+      <DependentUpon>201709300405042_initial5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

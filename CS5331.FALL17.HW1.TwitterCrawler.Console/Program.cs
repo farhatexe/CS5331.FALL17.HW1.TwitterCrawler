@@ -28,8 +28,10 @@ namespace CS5331.FALL17.HW1.TwitterCrawler.ConsoleApp
             ///    repo.CreateOrUpdateStatus(results);
             Console.WriteLine("Max Status: {0}", repo.GetMaxStatusId());
             Console.WriteLine("Min Status: {0}", repo.GetMinStatusId());
-            Console.WriteLine(repo.RemoveDuplicates());
-            repo.GetAllTags();
+            //Console.WriteLine(repo.RemoveDuplicates());
+            //repo.GetAllTags();
+            //repo.RemoveDuplicateClasses();
+            repo.UpdateCount();
             Console.ReadLine();
             //test.GetLimits();
         }
