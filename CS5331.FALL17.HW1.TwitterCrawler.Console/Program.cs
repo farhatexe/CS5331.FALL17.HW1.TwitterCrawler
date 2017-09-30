@@ -31,9 +31,12 @@ namespace CS5331.FALL17.HW1.TwitterCrawler.ConsoleApp
             //Console.WriteLine(repo.RemoveDuplicates());
             //repo.GetAllTags();
             //repo.RemoveDuplicateClasses();
-            repo.UpdateCount();
+            //repo.UpdateCount();
+            //repo.FlagStopWords();
+            repo.GetClassesSortedByRanking();
             Console.ReadLine();
             //test.GetLimits();
+
         }
 
 

@@ -18,5 +18,6 @@
         public bool IsHashTag { get; set; }
         public bool IsAddress { get; set; }
         public bool IsUnique { get; set; }
+        public bool IsStopWord { get; set; }
     }
 }

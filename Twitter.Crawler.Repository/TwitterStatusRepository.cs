@@ -183,5 +183,30 @@ namespace Twitter.Crawler.Repository
             _twitterDbContext.SaveChanges();
         }
 
+        public void FlagStopWords()
+        {
+            var results = _twitterDbContext.TwitterCrawlerClasses.Where(x => x.IsUnique).ToList();
+            var stopWordsObj = new StopWords();
+            foreach (var VARIABLE in results)
+            {
+                if (stopWordsObj.StopWordsSet.Contains(VARIABLE.ClassText))
+                {
+                    VARIABLE.IsStopWord = true;
+                }
+            }
+            _twitterDbContext.SaveChanges();
+        }
+
+        public void GetClassesSortedByRanking()
+        {
+            var results = _twitterDbContext.TwitterCrawlerClasses.Where(x => x.IsUnique).Where(y => !y.IsStopWord).OrderByDescending(o=>o.InstanceCount)
+                .ToList();
+            for(var i = 0; i<10; i++)
+            {
+                Console.WriteLine("Result: {0} Count: {1} Id: {2}", results[i].ClassText, results[i].InstanceCount, results[i].Id);
+            }
+            
+        }
+
     }
 }
