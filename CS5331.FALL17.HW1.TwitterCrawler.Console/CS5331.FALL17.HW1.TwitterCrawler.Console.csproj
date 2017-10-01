@@ -79,6 +79,10 @@
       <Project>{46FE15DB-D19A-493B-9121-C781E38ADD29}</Project>
       <Name>Twitter.Crawler.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Twitter.Crawler.Model\Twitter.Crawler.Model.csproj">
+      <Project>{cf7ebdde-5c7b-47a7-9171-34d8b06b948b}</Project>
+      <Name>Twitter.Crawler.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Twitter.Crawler.Repository\Twitter.Crawler.Repository.csproj">
       <Project>{4d7af950-bb64-4180-b247-840153554e37}</Project>
       <Name>Twitter.Crawler.Repository</Name>

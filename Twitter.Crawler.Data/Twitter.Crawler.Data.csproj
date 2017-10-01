@@ -87,6 +87,10 @@
     <Compile Include="Migrations\201709302208280_initial6.Designer.cs">
       <DependentUpon>201709302208280_initial6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710010157587_initial7.cs" />
+    <Compile Include="Migrations\201710010157587_initial7.Designer.cs">
+      <DependentUpon>201710010157587_initial7.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TwitterCrawlerContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709302208280_initial6.resx">
       <DependentUpon>201709302208280_initial6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710010157587_initial7.resx">
+      <DependentUpon>201710010157587_initial7.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

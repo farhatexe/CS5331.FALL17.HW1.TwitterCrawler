@@ -67,6 +67,7 @@
   <ItemGroup>
     <None Include="Entities\TwitterCoordinatesEntity.cs" />
     <None Include="Entities\TwitterPlaceEntity.cs" />
+    <Compile Include="Entities\ConfusionResultEntity.cs" />
     <Compile Include="Entities\TwitterCrawlerClassEntity.cs" />
     <Compile Include="Entities\TwitterStatusEntity.cs" />
     <None Include="Entities\TwitterUserEntity.cs" />

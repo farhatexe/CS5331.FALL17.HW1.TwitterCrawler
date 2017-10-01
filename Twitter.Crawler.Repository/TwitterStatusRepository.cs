@@ -208,5 +208,18 @@ namespace Twitter.Crawler.Repository
             
         }
 
+        public Dictionary<bool, List<string>> GetListOfTweetsUnderTest()
+        {
+            var returnResults = new Dictionary<bool, List<string>>();
+            var trueResults = _twitterDbContext.TwitterStatusEntities.Where(x=>x.TrainingResult == true).Select(y=>y.Text).ToList();
+            var falseResults = _twitterDbContext.TwitterStatusEntities.Where(x=>x.TrainingResult == false).Select(y=>y.Text).ToList();
+            returnResults.Add(true, trueResults);
+            returnResults.Add(false, falseResults);
+            return returnResults;
+
+        }
+
+        
+
     }
 }

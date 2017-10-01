@@ -149,6 +149,7 @@ namespace Twitter.Crawler.Repository
                 "how",
                 "however",
                 "hundred",
+                "i",
                 "ie",
                 "if",
                 "in",
